@@ -1,4 +1,4 @@
-package POO_aula4;
+package POO_Aula4;
 
 public class aula04 {
     public static void main(String[] args) {
