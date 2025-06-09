@@ -9,19 +9,19 @@ public class Conta {
 
     
     public Conta (){
-        this.status = false;
-        this.saldo = 0;
+        this.setStatus(false);
+        this.setSaldo(0) ;
     }
     
     public void abrirConta(String t){ // muda o
         this.setTipo(t);
-        this.status = true;
-        if (this.tipo == "cc"){
-            this.saldo = 50;
+        this.setStatus(true);
+        if (t == "cc"){
+            this.setSaldo(50);
             System.out.println("Sua Conta Corrente foi criada com sucesso!");
             System.out.println("Seu saldo é R$ " + this.getSaldo());
         } else {
-            this.saldo = 150;
+            this.setSaldo(150);
             System.out.println("Sua Conta Poupança foi criada com sucesso!");
             System.out.println("Seu saldo é R$ " + this.getSaldo());
         }
@@ -29,9 +29,9 @@ public class Conta {
 
     public void fecharConta(){
         this.status = false;
-        if (this.saldo < 0){
+        if (this.getSaldo() < 0){
             System.out.println("Você não pode encerrar a sua conta com saldo negativo. \nPor favor, regularize sua situação antes de encerrar a conta!");
-        } else if (this.saldo > 0){
+        } else if (this.getSaldo() > 0){
             System.out.println("Por favor, efetue o saque de todo o valor na sua conta para que o enerramento seja concluído com sucesso!");
         } else {
             this.setStatus(false);
@@ -42,17 +42,18 @@ public class Conta {
     
 
     public void depositar(float v){
-        if (this.status == true){
-            this.saldo += v;
+        if (this.getStatus() == true){
+            this.setSaldo(this.getSaldo() + v);
             System.out.println("Depósito efetuado com sucesso! \n Seu saldo é de R$ " + this.getSaldo());
         } else {
-            System.out.println("Realize a aberta de sua conta para efetuar depósitos.");
+            System.out.println("Realize a abertura de sua conta para efetuar depósitos.");
         }
     }
 
     public void sacar(float v) {
-        if(this.status == true && this.saldo > 0){
+        if(this.getStatus() == true && this.getSaldo() > 0){
             this.saldo -= v;
+            System.err.println("Saque realizado com sucesso da conta de " + this.getDono());
         } else {
             System.out.println("Saldo insuficiente!");
         }
