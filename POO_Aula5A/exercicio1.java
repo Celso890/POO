@@ -16,7 +16,9 @@ public class exercicio1 {
         c2.setTipo ("cp"); // conta poupança
         c2.setDono("Jorgina");
         c2.abrirConta("cp");
-        c2.sacar(50);
+        c2.sacar(150);
+        c2.fecharConta();
         c2.estadoAtual();
+
     }
 }
