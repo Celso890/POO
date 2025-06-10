@@ -20,7 +20,7 @@ public class Conta {
             this.setSaldo(50);
             System.out.println("Sua Conta Corrente foi criada com sucesso!");
             System.out.println("Seu saldo é R$ " + this.getSaldo());
-        } else {
+        } else if (t == "cp") {
             this.setSaldo(150);
             System.out.println("Sua Conta Poupança foi criada com sucesso!");
             System.out.println("Seu saldo é R$ " + this.getSaldo());
@@ -44,7 +44,7 @@ public class Conta {
     public void depositar(float v){
         if (this.getStatus() == true){
             this.setSaldo(this.getSaldo() + v);
-            System.out.println("Depósito efetuado com sucesso! \n Seu saldo é de R$ " + this.getSaldo());
+            System.out.println("Depósito efetuado com sucesso!");
         } else {
             System.out.println("Realize a abertura de sua conta para efetuar depósitos.");
         }
@@ -56,8 +56,7 @@ public class Conta {
             System.err.println("Saque realizado com sucesso da conta de " + this.getDono());
         } else {
             System.out.println("Saldo insuficiente!");
-        }
-        
+        }  
     }
 
     public void pagarMensal(){
@@ -84,9 +83,9 @@ public class Conta {
     public void estadoAtual(){
         System.out.println("Conta: " + this.getNumConta());
         System.out.println("Tipo: " + this.getTipo());
-        System.out.println("Dono: " + this.getSaldo());
+        System.out.println("Dono: " + this.getDono());
         System.out.println("Saldo: R$ " + this.getSaldo());
-        System.out.println("Status: " + this.getStatus());
+        System.out.println("Status: " + this.getStatus() + "\n");
     }
 
     //   MÉTODOS ESPECIAIS 
