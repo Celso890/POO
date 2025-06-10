@@ -51,8 +51,8 @@ public class Conta {
     }
 
     public void sacar(float v) {
-        if(this.getStatus() == true && this.getSaldo() > 0){
-            this.saldo -= v;
+        if(this.getStatus() == true && this.getSaldo() >= v){
+            this.setSaldo(this.getSaldo() - v);
             System.err.println("Saque realizado com sucesso da conta de " + this.getDono());
         } else {
             System.out.println("Saldo insuficiente!");
@@ -62,15 +62,16 @@ public class Conta {
 
     public void pagarMensal(){
         float r = 0.0f; 
-        if (this.tipo == "cc"){
+        if (this.getTipo() == "cc"){
             r = 12.0f;
         }else{
             r= 20.0f;
         }
 
-        if(this.status == true){
-            if (this.saldo > 0){
-                this.saldo -= r;
+        if(this.getStatus() == true){
+            if (this.getSaldo() > 0){
+                this.setSaldo(this.getSaldo() - r);
+                System.out.println("Mensalidade paga com sucesso por " + this.getDono());
             } else {
                 System.out.println("Saldo insuficiente!");
             }
@@ -80,8 +81,12 @@ public class Conta {
         }
     }
 
-    public void mostrarSaldo(){
-        System.out.println("Seu saldo atual é de R$ " + this.getSaldo());
+    public void estadoAtual(){
+        System.out.println("Conta: " + this.getNumConta());
+        System.out.println("Tipo: " + this.getTipo());
+        System.out.println("Dono: " + this.getSaldo());
+        System.out.println("Saldo: R$ " + this.getSaldo());
+        System.out.println("Status: " + this.getStatus());
     }
 
     //   MÉTODOS ESPECIAIS 
