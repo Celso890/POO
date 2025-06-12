@@ -10,7 +10,7 @@ public class ControleRemoto implements Controlador {
     
     public ControleRemoto(){ //Construtor padrão
         volume = 50;
-        ligado = false;
+        ligado = true;
         tocando = false;
     }
 
@@ -52,11 +52,12 @@ public class ControleRemoto implements Controlador {
 
     @Override
     public void abrirMenu() {
+        System.out.println("------- MENU -------");
         System.out.println("Está ligado ? " + this.getLigado());
         System.out.println("Esta tocando ? " + this.getTocando());
         System.out.println("Volume: " + this.getVolume());
-        for (int i = 0; i <= this.getVolume(); i+=10) {
-            System.out.println("[]");
+        for (int i = 0; i < this.getVolume(); i+=10) {
+            System.out.print("[]");
         }
     }
 
@@ -68,14 +69,14 @@ public class ControleRemoto implements Controlador {
     @Override
     public void maisVolume() {
         if (this.getLigado()) {
-            this.setVolume(this.getVolume()+ 5);
+            this.setVolume(this.getVolume() + 5);
         }
     }
 
     @Override
     public void menosVolume() {
         if (this.getLigado()) {
-            this.setVolume(this.getVolume()-5);
+            this.setVolume(this.getVolume() - 5);
         }
     }
 
