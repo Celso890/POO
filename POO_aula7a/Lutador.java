@@ -1,7 +1,5 @@
 package POO_aula7a;
 
-import java.lang.reflect.Constructor;
-
 public class Lutador {
     // ATRIBUTOS
     private String nome;
@@ -17,30 +15,33 @@ public class Lutador {
 
     // MÉTODOS
     public void apresentar(){
-        System.out.println("Lutador: " + this.getNome());
-        System.out.println("Origem: " + this.getNacionalidade());
-        System.out.println(this.getIdade() + " anos");
-        System.out.println(this.getAltura() + " m de altura");
+        System.out.println("------------------------------------------------------------");
+        System.out.println("Chegou a hora! Apresentamos o Lutador  " + this.getNome());
+        System.out.println("Diretamente de " + this.getNacionalidade());
+        System.out.println("com " + this.getIdade() + " anos e " + this.getAltura() + " m de altura");
         System.out.println("Pesando: " + this.getPeso() + " Kg");
-        System.out.println("Ganhou: " + this.getVitorias());
-        System.out.println("Perdeu: " + this.getDerrotas());
-        System.out.println("Empatou: " + this.getEmpates());
+        System.out.println(this.getVitorias() + " Vitórias" );
+        System.out.println(this.getDerrotas() + " Derrotas e");
+        System.out.println(this.getEmpates() + " Empates" );
     }
 
     public void status(){
-
+        System.out.println(this.getNome() + " é um peso " + this.getCategoria());
+        System.out.println("Ganhou " + this.getVitorias());
+        System.out.println("Perdeu " + this.getDerrotas());
+        System.out.println("Empatou " + this.getEmpates());
     } 
 
     public void ganharLuta(){
-        setVitorias(this.getVitorias() + 1);
+        this.setVitorias(this.getVitorias() + 1);
     }
 
     public void perderLuta(){
-        setDerrotas(this.getDerrotas() + 1);
+        this.setDerrotas(this.getDerrotas() + 1);
     }
 
     public void empatarLuta(){
-        setEmpates(this.getEmpates() + 1);
+        this.setEmpates(this.getEmpates() + 1);
     }
 
     // MÉTODOS ESPECIAIS 
@@ -135,7 +136,7 @@ public class Lutador {
     }
 
     
-    public void setCategoria() {
+    private void setCategoria() {
         if (peso < 52.2) {
             categoria = "Inválido";
         } else if (peso <= 70.3) {
