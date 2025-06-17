@@ -22,14 +22,14 @@ public class Lutador {
         System.out.println("Pesando: " + this.getPeso() + " Kg");
         System.out.println(this.getVitorias() + " Vitórias" );
         System.out.println(this.getDerrotas() + " Derrotas e");
-        System.out.println(this.getEmpates() + " Empates" );
+        System.out.println(this.getEmpates() + " Empates\n" );
     }
 
     public void status(){
-        System.out.println(this.getNome() + " é um peso " + this.getCategoria());
+        System.out.println("\n" + this.getNome() + " é um peso " + this.getCategoria());
         System.out.println("Ganhou " + this.getVitorias());
         System.out.println("Perdeu " + this.getDerrotas());
-        System.out.println("Empatou " + this.getEmpates());
+        System.out.println("Empatou " + this.getEmpates() + "\n");
     } 
 
     public void ganharLuta(){
