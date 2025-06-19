@@ -1,0 +1,114 @@
+package Ex_Aula09b;
+
+public class Livro implements Publicacao {
+    
+    // ATRIBUTOS
+    private String titulo;
+    private String autor;
+    private int totPaginas;
+    private int pagAtual;
+    private boolean aberto;
+    private Pessoa leitor;
+
+    public void detalhes(){
+
+    }
+
+    // MÉTODOS ESPECIAIS
+    
+    
+    // GETTERS e SETTERS
+    public String getTitulo() {
+        return titulo;
+    }
+
+    
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    
+    public String getAutor() {
+        return autor;
+    }
+
+  
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    
+    public int getTotPaginas() {
+        return totPaginas;
+    }
+
+    
+    public void setTotPaginas(int totPaginas) {
+        this.totPaginas = totPaginas;
+    }
+
+    
+    public int getPagAtual() {
+        return pagAtual;
+    }
+
+    
+    public void setPagAtual(int pagAtual) {
+        this.pagAtual = pagAtual;
+    }
+
+   
+    public boolean getAberto() {
+        return aberto;
+    }
+
+    
+    public void setAberto(boolean aberto) {
+        this.aberto = aberto;
+    }
+
+    
+    public Pessoa getLeitor() {
+        return leitor;
+    }
+
+    
+    public void setLeitor(Pessoa leitor) {
+        this.leitor = leitor;
+    }
+    
+    
+    // MÉTODOS ABSTRATOS
+    @Override
+    public void abrir() {
+        this.setAberto(true);
+    }
+
+    @Override
+    public void fechar() {
+        this.setAberto(false);
+    }
+
+    @Override
+    public void folhear() {
+        int tamanho = this.getTotPaginas();
+        if(this.getAberto()){
+        for (int i = 0; i <= tamanho; i++) {
+            this.setPagAtual(this.getPagAtual() + i);
+        }
+       } else {
+        System.out.println("O livro está fechado!");
+       }
+    }
+
+    @Override
+    public void avancarPag() {
+       this.setPagAtual(this.getPagAtual() + 1);
+    }
+
+    @Override
+    public void voltarPag() {
+       this.setPagAtual(this.getPagAtual() - 1);
+    }
+
+}
