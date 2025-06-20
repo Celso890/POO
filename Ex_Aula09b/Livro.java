@@ -10,12 +10,23 @@ public class Livro implements Publicacao {
     private boolean aberto;
     private Pessoa leitor;
 
-    public void detalhes(){
-
+    
+    public String detalhes() {
+        String detalhes = "Livro{" + "titulo=" + titulo + ", autor=" 
+                + autor + ", totPaginas=" + totPaginas 
+                + ", pagAtual=" + pagAtual + "aberto=" 
+                + aberto + ", leitor=" + leitor + '}';
+        return detalhes;
     }
 
     // MÉTODOS ESPECIAIS
-    
+    public Livro (String titulo, String autor, int totPaginas, Pessoa leitor) { // CONSTRUTOR
+        this.titulo = titulo;
+        this.autor = autor;
+        this.totPaginas = totPaginas;
+        this.leitor = leitor;
+    }
+
     
     // GETTERS e SETTERS
     public String getTitulo() {
