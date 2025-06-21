@@ -12,10 +12,12 @@ public class Livro implements Publicacao {
 
     
     public String detalhes() {
-        String detalhes = "Livro{" + "titulo=" + titulo + ", autor=" 
-                + autor + ", totPaginas=" + totPaginas 
-                + ", pagAtual=" + pagAtual + "aberto=" 
-                + aberto + ", leitor=" + leitor + '}';
+        String detalhes = "Livro{ " + "titulo= " + titulo + "\n, autor=" 
+                + autor + "\n, totPaginas= " + totPaginas 
+                + "\n, pagAtual= " + pagAtual + "\n, aberto= " 
+                + aberto + "\n, leitor= " + leitor.getNome() + 
+                "\n, idade= " + leitor.getIdade() +
+                "\n, sexo= " + leitor.getSexo() + '}' + "\n";
         return detalhes;
     }
 
@@ -103,10 +105,16 @@ public class Livro implements Publicacao {
     @Override
     public void folhear() {
         int tamanho = this.getTotPaginas();
+        
         if(this.getAberto()){
-        for (int i = 0; i <= tamanho; i++) {
-            this.setPagAtual(this.getPagAtual() + i);
-        }
+            if (this.getPagAtual() <= tamanho){
+                System.out.println("Folheando da página " + this.getPagAtual());    
+                for (int i = this.getPagAtual(); i < tamanho; i++) {
+                    this.setPagAtual(this.getPagAtual() + 1); 
+                }
+            } else {
+                System.out.println("A página não está dentro do limite de páginas do livro!");
+            }
        } else {
         System.out.println("O livro está fechado!");
        }
@@ -114,12 +122,22 @@ public class Livro implements Publicacao {
 
     @Override
     public void avancarPag() {
-       this.setPagAtual(this.getPagAtual() + 1);
+       if (this.getPagAtual() < this.getTotPaginas()){
+            this.setPagAtual(this.getPagAtual() + 1);
+       } else {
+        System.out.println("Fim do Livro");
+       }
+       
     }
 
     @Override
     public void voltarPag() {
-       this.setPagAtual(this.getPagAtual() - 1);
+       if (this.getPagAtual() > 0 && this.getPagAtual() <= this.getTotPaginas()){
+            this.setPagAtual(this.getPagAtual() - 1);
+       } else {
+            System.out.println("O Livro está na página inicial.");
+       } 
+        
     }
 
 }
