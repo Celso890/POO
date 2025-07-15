@@ -13,7 +13,7 @@ public class ProjetoLivro  {
         l[2] = new Livro("Java Avançado", "Maria Candido", 800, p[0]);
 
         l[0].abrir();
-        l[0].setPagAtual(300);
+        l[0].setPagAtual(250);
         l[0].avancarPag();
         l[0].avancarPag();
         

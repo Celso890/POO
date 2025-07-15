@@ -17,7 +17,8 @@ public class Livro implements Publicacao {
                 + "\n, pagAtual= " + pagAtual + "\n, aberto= " 
                 + aberto + "\n, leitor= " + leitor.getNome() + 
                 "\n, idade= " + leitor.getIdade() +
-                "\n, sexo= " + leitor.getSexo() + '}' + "\n";
+                "\n, sexo= " + leitor.getSexo() + '}' + "\n"
+                ;
         return detalhes;
     }
 
