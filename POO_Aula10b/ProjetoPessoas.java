@@ -11,6 +11,8 @@ public class ProjetoPessoas {
         p3.setNome("Cláudio");
         p4.setNome("Fabiana");
 
+
+
         p2.setCurso("Informática");
        // p3.setSalario(2500.75);
         p4.setSetor("Estoque");
@@ -19,7 +21,7 @@ public class ProjetoPessoas {
       //  p2.mudarTrabalho(); //Não é possível pois a classe Aluno não possui o método citado
       //  p4.cancelarMatr(;) //Não é possível pois a classe Funcionario não possui o método citado
 
-      
+    
 
     }
 }
