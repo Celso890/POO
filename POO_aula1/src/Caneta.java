@@ -1,4 +1,4 @@
-package POO_Aula1.src;
+package POO_aula1.src;
 public class Caneta {
     String modelo;
     String cor;
@@ -6,7 +6,7 @@ public class Caneta {
     int carga;
     boolean tampada;
 
-    void status(){
+   public void status(){
         System.out.println("Modelo: " + this.modelo);
         System.out.println("Uma caneta " + this.cor);
         System.out.println("Ponta: " + this.ponta);
@@ -14,7 +14,7 @@ public class Caneta {
         System.out.println("Está tampada? " + this.tampada);
     }
 
-    void rabiscar() {
+    public void rabiscar() {
         if(this.tampada == true){
             System.out.println("[ERRO] Não posso rabiscar!");
         } else {
@@ -22,11 +22,11 @@ public class Caneta {
         }
     }
     
-    void tampar(){
+    public void tampar(){
         this.tampada = true;
     }
 
-    void destampar(){
+    public void destampar(){
         this.tampada = false;
     }
 }
