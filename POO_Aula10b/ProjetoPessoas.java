@@ -14,12 +14,12 @@ public class ProjetoPessoas {
 
 
         p2.setCurso("Informática");
-        p3.setSalario(2500.75);
+        p3.setSalario((float) 2500.75);
         p4.setSetor("Estoque");
 
-      //  p1.receberAumento(550.20); //Não é possível pois a classe pessoa não possui o método citado
-      //  p2.mudarTrabalho(); //Não é possível pois a classe Aluno não possui o método citado
-      //  p4.cancelarMatr(;) //Não é possível pois a classe Funcionario não possui o método citado
+       // p1.receberAumento(550.20); //Não é possível pois a classe pessoa não possui o método citado
+       // p2.mudarTrabalho(); //Não é possível pois a classe Aluno não possui o método citado
+       // p4.cancelarMatr(;) //Não é possível pois a classe Funcionario não possui o método citado
 
     
 
